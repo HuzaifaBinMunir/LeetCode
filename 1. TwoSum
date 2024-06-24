@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+       int length = nums.size();
+    vector<int> indices(2, -1); // Initialize with -1
+
+    for (int i = 0; i < length; ++i) {
+        for (int j = i + 1; j < length; ++j) {
+            if (target == nums[i] + nums[j]) {
+                indices[0] = i;
+                indices[1] = j;
+                break; // Found a valid pair, exit the loop
+            }
+        }
+    }
+
+    return indices;
+    }
+};
